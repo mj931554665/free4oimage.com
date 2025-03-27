@@ -1,0 +1,101 @@
+{
+  "name": "olmOCR",
+  "lang": "en",
+  "page_path": "olmocr/",
+  "resource_path": "olmocr",
+  "title": "olmOCR - Free & Efficient PDF Text Extraction Online",
+  "description": "Extract text from PDFs with olmOCR, a high-performance tool for accurate and structured document processing. Free and open-source.",
+  "h1": "olmOCR - Free & Efficient PDF Text Extraction Online",
+  "introduction": {
+    "h2": "What is olmOCR?",
+    "content": "olmOCR is a high-performance and cost-effective tool designed for accurate PDF text extraction. Built on Qwen2-VL-7B-Instruct, it converts scanned documents and PDFs into clean, structured text. Whether dealing with books, academic papers, or legal documents, olmOCR ensures precise and efficient text recognition with Markdown formatting support."
+  },
+  "features": {
+    "h2": "Key Features of olmOCR",
+    "content": [
+      {
+        "h3": "High-Performance PDF Extraction",
+        "content": "olmOCR has been fine-tuned on 250,000 pages, ensuring accurate text recognition from both digital-born and scanned PDFs. It handles multi-column layouts, tables, equations, and handwriting seamlessly."
+      },
+      {
+        "h3": "Cost-Effective and Scalable",
+        "content": "Processing one million PDF pages costs only $190, making olmOCR 32 times cheaper than GPT-4o APIs. Its scalable infrastructure supports inference across multiple GPUs efficiently."
+      },
+      {
+        "h3": "Markdown Output for Easy Processing",
+        "content": "olmOCR outputs text in Markdown format, ensuring structured and easy-to-parse results. This format enhances readability and makes integration with other tools seamless."
+      },
+      {
+        "h3": "Fully Open-Source and Customizable",
+        "content": "Built on Qwen2-VL-7B-Instruct, olmOCR is fully open-source. Developers can access model weights, fine-tuning datasets, and complete training and inference code for customization."
+      }
+    ]
+  },
+  "how to play": {
+    "h2": "How to Use olmOCR for PDF Extraction",
+    "content": [
+      {
+        "h3": "Step 1: Install olmOCR",
+        "content": "Visit the olmOCR GitHub repository and install the toolkit. Ensure your machine has a compatible GPU for efficient processing."
+      },
+      {
+        "h3": "Step 2: Run the Pipeline",
+        "content": "Execute the command: python -m olmocr.pipeline ./localworkspace --pdfs tests/sample.pdf. This processes your document and extracts structured text."
+      },
+      {
+        "h3": "Step 3: Review and Export Text",
+        "content": "Once processed, the extracted text will be available in Markdown format. You can review and export it for further use."
+      },
+      {
+        "h3": "Step 4: Customize for Specific Needs",
+        "content": "Modify olmOCR's open-source code to enhance extraction for specialized documents, including legal, academic, or handwritten content."
+      }
+    ]
+  },
+  "tips": {
+    "h2": "Tips for Optimizing PDF Text Extraction with olmOCR",
+    "content": [
+      {
+        "h3": "Use High-Quality PDFs",
+        "content": "For best results, provide PDFs with clear text. Poor-quality scans may impact extraction accuracy."
+      },
+      {
+        "h3": "Enable Multi-GPU Processing",
+        "content": "If processing large batches, configure olmOCR to leverage multiple GPUs for faster performance."
+      },
+      {
+        "h3": "Customize Model Parameters",
+        "content": "Adjust olmOCR's settings to optimize text recognition for specific document types, such as academic papers or legal files."
+      },
+      {
+        "h3": "Validate Extracted Text",
+        "content": "Manually review extracted content, especially for complex documents, to ensure accuracy before use."
+      }
+    ]
+  },
+  "faq": {
+    "h2": "Frequently Asked Questions About olmOCR",
+    "content": [
+      {
+        "h3": "Is olmOCR free to use?",
+        "content": "Yes, olmOCR is fully open-source and free to use. You can access the complete code and dataset from GitHub."
+      },
+      {
+        "h3": "Does olmOCR support scanned PDFs?",
+        "content": "Yes, olmOCR is trained on both digital-born and scanned PDFs, ensuring accurate extraction for various document types."
+      },
+      {
+        "h3": "What is the output format of olmOCR?",
+        "content": "olmOCR provides extracted text in Markdown format, making it easy to process and integrate with other tools."
+      },
+      {
+        "h3": "Can I use olmOCR for large-scale processing?",
+        "content": "Yes, olmOCR is optimized for large-scale PDF processing. It scales efficiently from single to multiple GPUs."
+      }
+    ]
+  },
+  "cta": {
+    "h2": "Get Started with olmOCR Today!",
+    "content": "Download olmOCR from GitHub and start extracting structured text from PDFs effortlessly. Join the open-source community and contribute to its continuous improvement."
+  }
+}

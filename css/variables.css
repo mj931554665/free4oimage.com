@@ -1,0 +1,77 @@
+:root {
+  /* Color Palette - 提高对比度 */
+  --primary-color: #1a4baf;          /* 更深的蓝色 */
+  --primary-dark: #0d2b6b;           /* 更深的主色调 */
+  --primary-light: #4080e5;          /* 调整的浅色主色调 */
+  
+  --secondary-color: #3730a3;        /* 更深的靛蓝色 */
+  --accent-color: #d97706;          /* 更深的橙色 */
+  
+  --background-light: #ffffff;       /* 主背景色 */
+  --background-gray: #f0f0f0;       /* 稍微调亮 */
+  --background-dark: #111827;       /* 更深的背景 */
+  
+  --text-primary: #000000;          /* 纯黑色文本 */
+  --text-secondary: #333333;        /* 深灰色文本 */
+  --text-light: #666666;           /* 中灰色文本 */
+  --text-white: #ffffff;           /* 白色文本 */
+  
+  --border-color: #d1d5db;         /* 更深的边框颜色 */
+  --error-color: #dc2626;          /* 更深的错误颜色 */
+  --success-color: #059669;        /* 更深的成功颜色 */
+  
+  /* Typography */
+  --font-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-secondary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  
+  /* Spacing */
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-12: 3rem;     /* 48px */
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.375rem;  /* 6px */
+  --radius-lg: 0.5rem;    /* 8px */
+  --radius-xl: 1rem;      /* 16px */
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+}
+
+/* Dark Mode Variables - 提高暗色模式对比度 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-light: #000000;
+    --background-gray: #1a1a1a;
+    --background-dark: #000000;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #f0f0f0;
+    --text-light: #d1d5db;
+    
+    --border-color: #4b5563;
+  }
+} 

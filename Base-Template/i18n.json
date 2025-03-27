@@ -1,0 +1,170 @@
+{
+  "en": {
+    "lang": "en",
+    "lang_path": "",
+    "header": {
+      "home": "MistralOCR.org",
+      "use": "Use OCR",
+      "tools": "Tools",
+      "api": "API",
+      "docs": "Documentation",
+      "language": "Language",
+      "search_placeholder": "Search tools..."
+    },
+    "nav": {
+      "use": "Use OCR",
+      "tools": "Tools",
+      "api": "API",
+      "docs": "Documentation"
+    },
+    "tool": {
+      "start_now": "Start Now",
+      "fullscreen": "Fullscreen",
+      "clear": "Clear",
+      "free_use": "Use for Free"
+    },
+    "cta": {
+      "start_now": "Start"
+    }
+  },
+  "ko": {
+    "lang": "ko",
+    "lang_path": "ko/",
+    "header": {
+      "home": "MistralOCR.org",
+      "use": "OCR 사용",
+      "tools": "도구",
+      "api": "API",
+      "docs": "문서",
+      "language": "언어",
+      "search_placeholder": "도구 검색..."
+    },
+    "nav": {
+      "use": "OCR 사용",
+      "tools": "도구",
+      "api": "API",
+      "docs": "문서"
+    },
+    "tool": {
+      "start_now": "지금 시작",
+      "fullscreen": "전체 화면",
+      "clear": "지우기",
+      "free_use": "무료로 사용"
+    },
+    "cta": {
+      "start_now": "시작"
+    }
+  },
+  "ru": {
+    "lang": "ru",
+    "lang_path": "ru/",
+    "header": {
+      "home": "MistralOCR.org",
+      "use": "Использовать OCR",
+      "tools": "Инструменты",
+      "api": "API",
+      "docs": "Документация",
+      "language": "Язык",
+      "search_placeholder": "Поиск инструментов..."
+    },
+    "nav": {
+      "use": "Использовать OCR",
+      "tools": "Инструменты",
+      "api": "API",
+      "docs": "Документация"
+    },
+    "tool": {
+      "start_now": "Начать сейчас",
+      "fullscreen": "Полный экран",
+      "clear": "Очистить",
+      "free_use": "Использовать бесплатно"
+    },
+    "cta": {
+      "start_now": "Начать"
+    }
+  },
+  "pt": {
+    "lang": "pt",
+    "lang_path": "pt/",
+    "header": {
+      "home": "MistralOCR.org",
+      "use": "Usar OCR",
+      "tools": "Ferramentas",
+      "api": "API",
+      "docs": "Documentação",
+      "language": "Idioma",
+      "search_placeholder": "Buscar ferramentas..."
+    },
+    "nav": {
+      "use": "Usar OCR",
+      "tools": "Ferramentas",
+      "api": "API",
+      "docs": "Documentação"
+    },
+    "tool": {
+      "start_now": "Começar Agora",
+      "fullscreen": "Tela Cheia",
+      "clear": "Limpar",
+      "free_use": "Use Gratuitamente"
+    },
+    "cta": {
+      "start_now": "Começar"
+    }
+  },
+  "zh-CN": {
+    "lang": "zh-CN",
+    "lang_path": "zh-CN/",
+    "header": {
+      "home": "MistralOCR.org",
+      "use": "使用OCR",
+      "tools": "工具",
+      "api": "API接口",
+      "docs": "文档",
+      "language": "语言",
+      "search_placeholder": "搜索工具..."
+    },
+    "nav": {
+      "use": "使用OCR",
+      "tools": "工具",
+      "api": "API接口",
+      "docs": "文档"
+    },
+    "tool": {
+      "start_now": "立即使用",
+      "fullscreen": "全屏",
+      "clear": "清除",
+      "free_use": "免费使用"
+    },
+    "cta": {
+      "start_now": "开始"
+    }
+  },
+  "es": {
+    "lang": "es",
+    "lang_path": "es/",
+    "header": {
+      "home": "MistralOCR.org",
+      "use": "Usar OCR",
+      "tools": "Herramientas",
+      "api": "API",
+      "docs": "Documentación",
+      "language": "Idioma",
+      "search_placeholder": "Buscar herramientas..."
+    },
+    "nav": {
+      "use": "Usar OCR",
+      "tools": "Herramientas",
+      "api": "API",
+      "docs": "Documentación"
+    },
+    "tool": {
+      "start_now": "Empezar Ahora",
+      "fullscreen": "Pantalla Completa",
+      "clear": "Limpiar",
+      "free_use": "Usar Gratis"
+    },
+    "cta": {
+      "start_now": "Empezar"
+    }
+  }
+}

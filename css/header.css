@@ -1,0 +1,345 @@
+@import 'variables.css';
+
+/* 头部导航样式 */
+header {
+    background-color: #000000;
+    border-bottom: 1px solid #333333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+}
+
+@media (min-width: 768px) {
+    header {
+        margin-bottom: 2em;
+    }
+}
+
+/* 导航栏布局 */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-4);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo区域 */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    text-decoration: none;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+}
+
+.logo h2 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Buy Me a Coffee 按钮容器 */
+.logo .bmc-btn-container {
+    margin-left: 20px;
+}
+
+/* 导航控制区 */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: var(--text-base);
+    padding: var(--spacing-2);
+}
+
+.nav-links a:hover {
+    color: #00ff9d;
+}
+
+/* 语言下拉菜单 */
+.language-dropdown {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.language-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: var(--spacing-2);
+    height: 100%;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2);
+    min-width: 200px;
+    box-shadow: var(--shadow-md);
+    display: none;
+}
+
+.language-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: var(--spacing-2) var(--spacing-4);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background-color: #2a2a2a;
+    color: #00ff9d;
+}
+
+/* 移动端汉堡菜单 */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: var(--spacing-2);
+}
+
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all var(--transition-normal);
+}
+
+/* 移动端导航菜单 */
+.mobile-nav {
+    display: none;
+    background-color: #1a1a1a;
+    padding: var(--spacing-4);
+    border-top: 1px solid #333333;
+}
+
+.mobile-nav ul {
+    list-style: none;
+}
+
+.mobile-nav a {
+    display: block;
+    padding: var(--spacing-3);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.mobile-nav a:hover {
+    background-color: #2a2a2a;
+    color: #00ff9d;
+}
+
+/* 搜索框样式 */
+.search-box {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 var(--spacing-4);
+}
+
+.search-box form {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2);
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    background: none;
+    padding: var(--spacing-2);
+    font-size: var(--text-base);
+    color: #ffffff;
+    outline: none;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    padding: var(--spacing-2);
+    cursor: pointer;
+    color: #ffffff;
+    transition: color var(--transition-fast);
+}
+
+.search-box button:hover {
+    color: #00ff9d;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .burger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        padding: var(--spacing-2);
+    }
+    
+    .burger div {
+        width: 25px;
+        height: 2px;
+        background-color: #ffffff;
+    }
+
+    .mobile-nav.active {
+        display: block;
+    }
+
+    nav {
+        padding: var(--spacing-2);
+    }
+
+    .logo {
+        gap: var(--spacing-2);
+    }
+
+    .logo h2 {
+        font-size: 1rem;
+    }
+
+    .logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* 移动端 Buy Me a Coffee 按钮样式 */
+    .logo .bmc-btn-container {
+        /* margin-left: 8px; */
+        transform: scale(0.7);
+        transform-origin: left center;
+    }
+}
+
+/* 中等屏幕尺寸的特殊处理 */
+@media (min-width: 768px) and (max-width: 1300px) {
+    .nav-links {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 0 0.25rem;
+    }
+    
+    .nav-links li a {
+        padding: 0.4rem 0.4rem;
+        font-size: 0.9rem;
+    }
+    
+    .logo h2 {
+        font-size: 1.75rem;
+    }
+    
+    .search-box {
+        margin: 0 0.75rem;
+        max-width: 250px;
+    }
+    
+    .language-button {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* 较小的中等屏幕尺寸处理 */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .logo h2 {
+        font-size: 1.5rem; /* 进一步减小logo文字 */
+    }
+    
+    .nav-links li {
+        margin: 0 0.15rem; /* 进一步减小间距 */
+    }
+    
+    .nav-links li a {
+        padding: 0.3rem 0.3rem; /* 减小padding */
+        font-size: 0.85rem; /* 减小字体 */
+    }
+    
+    .search-box {
+        margin: 0 0.5rem; /* 减小搜索框边距 */
+        max-width: 200px; /* 减小搜索框宽度 */
+    }
+    
+    .search-box input {
+        font-size: 0.9rem; /* 减小搜索框字体 */
+    }
+    
+    .language-button {
+        padding: 0.3rem 0.5rem; /* 减小语言按钮padding */
+        font-size: 0.9rem; /* 减小语言按钮字体 */
+    }
+    
+    .dropdown-arrow {
+        width: 1rem; /* 减小下拉箭头大小 */
+        height: 1rem;
+    }
+}
+
+/* 小屏幕的样式保持不变 */
+@media (max-width: 767px) {
+    .burger {
+        display: block;
+    }
+}
+
+/* 确保在桌面端隐藏移动搜索按钮 */
+.mobile-search-toggle {
+    display: none;
+}

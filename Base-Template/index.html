@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="{{i18n.lang}}">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  
+  <!-- 关键CSS内联 -->
+  <style>
+    body { margin: 0; background: #000; }
+    .container { max-width: 1200px; margin: 0 auto; }
+  </style>
+  
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="{{/}}css/main-style.css" as="style">
+  <link rel="preload" href="{{/}}css/header.css" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style">
+  
+
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <link rel="canonical" href="https://free4oimage.com/{{i18n.lang_path}}{{page_path}}">
+
+  <link rel="icon" href="{{/}}favicon.ico" />
+  <link rel="icon" type="image/png" href="{{/}}img/favicon_io/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{/}}img/favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{/}}img/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{/}}img/favicon_io/favicon-16x16.png" />
+  <link rel="icon" type="image/x-icon" href="{{/}}img/favicon_io/favicon.ico">
+  <link rel="manifest" href="{{/}}site.webmanifest" />
+  
+  <!-- CSS加载 -->
+  <link rel="stylesheet" href="{{/}}css/main-style.css">
+  <link rel="stylesheet" href="{{/}}css/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- 结构化数据 -->
+  <!-- "image": "https://s.free4oimage.com/img/tool-cover/{{path}}.png", -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "{{name}}",
+      "description": "{{description}}",
+      "url": "https://free4oimage.com/{{i18n.lang_path}}{{page_path}}",
+      "applicationCategory": "Image Generation Software",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Mistral OCR",
+        "url": "https://free4oimage.com"
+      }
+    }
+  </script>
+
+  <!-- 预加载logo图片 -->
+  <link rel="preload" as="image" href="{{/}}img/favicon_io/android-chrome-192x192.png">
+
+  <!-- 添加更多meta标签 -->
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:image" content="https://s.free4oimage.com/img/tool-cover/{{path}}.png">
+  <meta property="og:url" content="https://free4oimage.com">
+
+  <!-- 添加PWA支持 -->
+  <link rel="manifest" href="{{/}}manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- Open Graph / 社交媒体元标签 -->
+  <meta property="og:title" content="Free4oImage - Free Online AI Image Generation">
+  <meta property="og:description" content="Free online AI image generation service. Create stunning images with artificial intelligence.">
+  <meta property="og:image" content="https://free4oimage.com/img/favicon_io/android-chrome-512x512.png">
+  <meta property="og:url" content="https://free4oimage.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free4oImage - Free Online AI Image Generation">
+  <meta name="twitter:description" content="Free online AI image generation service. Create stunning images with artificial intelligence.">
+  <meta name="twitter:image" content="https://free4oimage.com/img/favicon_io/android-chrome-512x512.png">
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="{{/}}">
+            <img src="{{/}}img/favicon_io/android-chrome-192x192.png" 
+                 alt="{{i18n.header.home}}"
+                 width="192" 
+                 height="192"
+                 loading="lazy">
+            <h2>{{i18n.header.home}}</h2>
+          </a>
+          <div class="bmc-btn-container">
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="mojun" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+          </div>
+        </div>
+        <div class="search-box">
+          <!-- <form action="{{/}}search/" method="get">
+            <input type="text" name="q" placeholder="{{i18n.header.search_placeholder}}" required>
+            <button type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form> -->
+        </div>
+        <div class="nav-controls">
+          <button class="mobile-search-toggle">
+            <i class="fas fa-search"></i>
+          </button>
+          <ul class="nav-links">
+           
+            <li>
+              <div class="language-dropdown">
+                <button class="language-button">
+                  <i class="fas fa-globe"></i>
+                  <span>{{i18n.header.language}}</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="{{/}}{{page_path}}" class="dropdown-item">🇺🇸 English</a>
+                  <a href="{{/}}ko/" class="dropdown-item">🇰🇷 한국어</a>
+                  <a href="{{/}}ru/" class="dropdown-item">🇷🇺 Русский</a>
+                  <a href="{{/}}pt/" class="dropdown-item">🇵🇹 Português</a>
+                  <a href="{{/}}zh-CN/{{page_path}}" class="dropdown-item">🇨🇳 简体中文</a>
+                  <a href="{{/}}es/{{page_path}}" class="dropdown-item">🇪🇸 Español</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div> -->
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- <div class="mobile-nav">
+    <ul>
+      <li><a href="{{/}}play/">{{i18n.nav.play}}</a></li>
+      <li><a href="{{/}}mod/">{{i18n.nav.mod}}</a></li>
+      <li><a href="{{/}}download/">{{i18n.nav.download}}</a></li>
+      <li><a href="{{/}}sprunki-characters/">{{i18n.nav.characters}}</a></li>
+      <li><a href="{{/}}sprunki-phase/">{{i18n.nav.phase}}</a></li>
+    </ul>
+  </div> -->
+
+  <main class="container">
+    <h1>{{h1}}</h1>
+    
+    <section class="game-container">
+      <div id="recommended-games-container">
+        <div id="game-container">
+          <iframe src="{{/}}iframe/index.html" allowfullscreen loading="lazy" title="{{name}}" tabindex="0"></iframe>
+          <div class="sharethis-inline-share-buttons" style="margin: 20px 0;"></div>
+        </div>
+      </div>
+    </section>
+
+    <article>
+      <section class="introduction">
+        <h2><span>📄</span>{{introduction.h2}}</h2>
+        <div><p>{{introduction.content}}</p></div>
+      </section>
+
+      <section class="features">
+        <h2>
+          <span>⚡</span>{{features.h2}}
+        </h2>
+        <div class="content">
+          {{features-loop}}
+        </div>
+      </section>
+
+
+      <section class="how-to-play">
+        <h2>
+          <span>📝</span>{{how-to-play.h2}}
+        </h2>
+        <div class="content">
+          {{how-to-play-loop}}
+        </div>
+      </section>
+
+      <section class="tips">
+        <h2>
+          <span>💡</span>{{tips.h2}}
+        </h2>
+        <div class="content">
+          {{tips-loop}}
+        </div>
+      </section>
+
+      <section class="faq">
+        <h2>
+          <span>❓</span>{{faq.h2}}
+        </h2>
+        <div class="content">
+          {{faq-loop}}
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2>
+          <span>🔍</span>{{cta.h2}}
+        </h2>
+        <div class="content">
+          <p>{{cta.content}}</p>
+          <div>
+            <a href="index.html#recommended-games-container">
+              {{i18n.tool.start_now}} {{name}}
+            </a>
+            <p>{{i18n.tool.free_use}}</p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer style="background: #2c2c2c; color: white; padding: 20px; text-align: center;">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: auto; gap: 2rem;">
+      <div class="footer-section">
+       
+      
+
+
+      <div class="footer-section">
+        <h4 style="color: #00ff9d; margin-bottom: 1rem;">About Us</h4>
+        <p>free4oimage.com is a free online AI image generation platform.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4 style="color: #00ff9d; margin-bottom: 1rem;">Legal Information</h4>
+        <p><a href="{{/}}privacy-policy/" style="color: white; text-decoration: none;">Privacy Policy</a></p>
+        <p><a href="{{/}}terms-of-service/" style="color: white; text-decoration: none;">Terms of Service</a></p>
+        <p><a href="{{/}}cookie-policy/" style="color: white; text-decoration: none;">Cookie Policy</a></p>
+      </div>
+    </div>
+    
+    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #444;">
+      <p>© 2025 free4oimage.com - All Rights Reserved</p>
+    </div>
+
+    <style>
+      .footer-section {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 1rem;
+      }
+      .footer-section p {
+        margin-bottom: 0.5rem;
+      }
+      .footer-section a:hover {
+        color: #00ff9d !important;
+        text-decoration: underline !important;
+      }
+    </style>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+# robots.txt for https://free4oimage.com
+User-agent: *
+Allow: /
+
+# 站点地图
+Sitemap: https://free4oimage.com/sitemap.xml
+
+# 爬虫限制
+Crawl-delay: 10
+
+# 禁止访问的目录
+Disallow: /Base-Template/
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/
+Disallow: /assets/
+Disallow: /node_modules/
+Disallow: /.git/
