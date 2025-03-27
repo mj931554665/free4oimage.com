@@ -7,4 +7,32 @@
         <priority>1</priority>
     </url>
 
+    <url>
+        <loc>https://free4oimage.com/cookie-policy/</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://free4oimage.com/iframe/</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://free4oimage.com/privacy-policy/</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://free4oimage.com/terms-of-service/</loc>
+        <lastmod>2025-03-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
 </urlset>

@@ -1,6 +1,10 @@
 # robots.txt for https://free4oimage.com
 User-agent: *
 Allow: /
+Allow: /cookie-policy/
+Allow: /iframe/
+Allow: /privacy-policy/
+Allow: /terms-of-service/
 
 # 站点地图
 Sitemap: https://free4oimage.com/sitemap.xml
