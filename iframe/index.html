@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4o Image Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .network-notice {
+            background-color: rgba(0,255,157,0.1);
+            border: 1px solid rgba(0,255,157,0.3);
+            border-radius: 5px;
+            padding: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #00ff9d;
+        }
+        .container {
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .input-section {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #444;
+            border-radius: 5px;
+            min-height: 100px;
+            resize: vertical;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #00ff9d;
+            box-shadow: 0 0 5px rgba(0,255,157,0.2);
+        }
+        button {
+            background-color: #00ff9d;
+            color: #000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #00cc7d;
+            transform: translateY(-1px);
+        }
+        .style-select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .style-select:focus {
+            outline: none;
+            border-color: #00ff9d;
+            box-shadow: 0 0 5px rgba(0,255,157,0.2);
+        }
+        .generated-image {
+            max-width: 100%;
+            margin: 20px 0;
+            border-radius: 8px;
+            display: block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .loading {
+            text-align: center;
+            color: #00ff9d;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        .error-message {
+            color: #ff4d4d;
+            padding: 12px;
+            background-color: rgba(255,77,77,0.1);
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 1px solid rgba(255,77,77,0.3);
+        }
+        h1 {
+            color: #00ff9d;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="network-notice">
+        Note: If the image generation fails, please try connecting through a US-based network.
+    </div>
+    <div class="container">
+        <h1>4o Image Generator</h1>
+        <div class="input-section">
+            <textarea id="prompt" placeholder="Enter a detailed description of the image you want to create (e.g., A wolf running under moonlight with a starry night sky background)"></textarea>
+            <select id="art-style" class="style-select">
+                <option value="realistic">Photorealistic</option>
+                <option value="anime">Anime Style</option>
+                <option value="watercolor">Watercolor</option>
+                <option value="oil">Oil Painting</option>
+                <option value="sketch">Pencil Sketch</option>
+            </select>
+            <button onclick="generateImage()">Generate Image</button>
+        </div>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const API_KEY = 'AIzaSyD-hA39Ag2kcJ-W7hNZDEhi2CJlHbNUsyg';
+
+        async function generateImage(retryCount = 0) {
+            const prompt = document.getElementById('prompt').value;
+            const style = document.getElementById('art-style').value;
+            const outputDiv = document.getElementById('output');
+            const MAX_RETRIES = 3;
+
+            if (!prompt) {
+                alert('Please enter an image description!');
+                return;
+            }
+
+            outputDiv.innerHTML = '<div class="loading">Creating your image, please wait...</div>';
+
+            // Style prompts
+            const stylePrompts = {
+                realistic: "Create a photorealistic image with high detail and natural lighting",
+                anime: "Create an anime/manga style illustration with clean lines and vibrant colors",
+                watercolor: "Create a watercolor style image with soft edges and flowing colors",
+                oil: "Create an oil painting style image with rich textures and bold strokes",
+                sketch: "Create a detailed pencil sketch with fine lines and shading"
+            };
+
+            // Final prompt
+            const finalPrompt = `${stylePrompts[style]}. The image should show: ${prompt}
+
+Additional requirements:
+- High quality and detailed
+- Professional composition
+- Balanced lighting and colors
+- Clear focal point
+- Cohesive style throughout`;
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp-image-generation:generateContent?key=${API_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [
+                                { text: finalPrompt }
+                            ]
+                        }],
+                        generationConfig: {
+                            responseModalities: ["Text", "Image"]
+                        }
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (data.error) {
+                    throw new Error(data.error.message || 'Image generation failed');
+                }
+
+                const parts = data.candidates?.[0]?.content?.parts;
+                if (!parts || parts.length === 0) {
+                    throw new Error('Invalid response format');
+                }
+
+                const imagePart = parts.find(part => part.inlineData?.mimeType === 'image/png');
+                if (!imagePart?.inlineData?.data) {
+                    if (retryCount < MAX_RETRIES) {
+                        return generateImage(retryCount + 1);
+                    }
+                    throw new Error('No image data found');
+                }
+
+                outputDiv.innerHTML = `
+                    <img src="data:image/png;base64,${imagePart.inlineData.data}" 
+                         class="generated-image" 
+                         alt="Generated image"
+                         onerror="this.onerror=null;this.src='';this.alt='Image failed to load';this.style.display='none';this.nextElementSibling.style.display='block';">
+                    <div class="error-message" style="display:none">Image failed to load. Please try again.</div>
+                `;
+
+                // 如果有文本响应，也显示出来
+                const textPart = parts.find(part => part.text);
+                if (textPart?.text) {
+                    outputDiv.innerHTML += `
+                        <div class="text-response" style="margin-top: 20px; padding: 12px; background: rgba(0,255,157,0.1); border-radius: 5px;">
+                            ${textPart.text}
+                        </div>
+                    `;
+                }
+
+            } catch (error) {
+                console.error('Image generation error:', error);
+                if (retryCount < MAX_RETRIES) {
+                    return generateImage(retryCount + 1);
+                }
+                outputDiv.innerHTML = `
+                    <div class="error-message">
+                        Generation failed: ${error.message || 'Please try again later'}
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
